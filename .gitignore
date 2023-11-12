@@ -1,9 +1,11 @@
 # ignore config files
 *.config.js
 config.json
-*node_modules/
+
+node_modules/
+
 .replit
-replit.nix
+*replit.nix
 
 # Logs
 logs
