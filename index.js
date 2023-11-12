@@ -52,12 +52,9 @@ const rest = new REST().setToken(token);
 client.on(Events.InteractionCreate, async interaction => {
   if (!interaction.isChatInputCommand()) return;
 
-  const command = interaction.client.commands.get(interaction.commandName);
+  const command = client.commands.get(interaction.commandName);
 
-  if (!command) {
-    console.error(`No command matching ${interaction.commandName} was found.`);
-    return;
-  }
+  if (!command) return;
 
   try {
     await command.execute(interaction);
@@ -70,7 +67,6 @@ client.on(Events.InteractionCreate, async interaction => {
     }
   }
 });
-
 
 client.once(Events.ClientReady, c => {
   console.log(`Ready! Logged in as ${c.user.tag}`);
