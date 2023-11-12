@@ -2,10 +2,10 @@
 *.config.js
 config.json
 
-node_modules/
+.node_modules/
 
 .replit
-*replit.nix
+.nix
 
 # Logs
 logs
