@@ -1,12 +1,28 @@
 const fs = require('node:fs');
 const path = require('node:path');
-const { Client, Collection, Events, GatewayIntentBits } = require('discord.js');
+
+const { Client, Collection, Events, GatewayIntentBits,Partials } = require('discord.js');
 const { REST, Routes } = require('discord.js');
 const { clientId, token } = require('./config.json');
 
-const client = new Client({ intents: [GatewayIntentBits.Guilds] });
+const client = new Client({
+  allowedMentions: {
+    parse: ["roles", "users", "everyone"],
+    repliedUser: false,
+  },
+  intents: [
+    GatewayIntentBits.Guilds,
+    GatewayIntentBits.GuildMessages,
+    GatewayIntentBits.GuildPresences,
+    GatewayIntentBits.GuildMessageReactions,
+    GatewayIntentBits.DirectMessages,
+    GatewayIntentBits.MessageContent
+  ],
+  partials: [Partials.Channel, Partials.Message, Partials.User, Partials.GuildMember, Partials.Reaction]
+});
 
 client.commands = new Collection();
+
 
 const commands = [];
 // Grab all the command files from the commands directory you created earlier
@@ -23,6 +39,7 @@ for (const folder of commandFolders) {
     const command = require(filePath);
     if ('data' in command && 'execute' in command) {
       commands.push(command.data.toJSON());
+      client.commands.set(command.data.name, command);
     } else {
       console.log(`[WARNING] The command at ${filePath} is missing a required "data" or "execute" property.`);
     }
@@ -50,14 +67,16 @@ const rest = new REST().setToken(token);
 })();
 
 client.on(Events.InteractionCreate, async interaction => {
-  if (!interaction.isChatInputCommand()) return;
+  if (!interaction.isCommand()) return;
 
   const command = client.commands.get(interaction.commandName);
 
+  console.log('Retrieved command:', command);
+  
   if (!command) return;
 
   try {
-    await command.execute(interaction);
+    await command.execute(interaction, client);
   } catch (error) {
     console.error(error);
     if (interaction.replied || interaction.deferred) {
