@@ -1,6 +1,8 @@
 const { SlashCommandBuilder, AttachmentBuilder } = require("discord.js");
 const fetch = (...args) =>
   import("node-fetch").then(({ default: fetch }) => fetch(...args));
+const path = require("node:path");
+const fs = require("node:fs");
 
 module.exports = {
   data: new SlashCommandBuilder()
@@ -23,8 +25,7 @@ module.exports = {
       players += data.players.online;
     }
 
-    const buffer = Buffer.from(data.icon, "base64");
-
+   
     const serverInfo = {
       hostname: data.hostname,
       ip: data.ip,
@@ -41,8 +42,6 @@ module.exports = {
     } else {
       status = "offline";
     }
-
-    const file = new AttachmentBuilder(buffer, "image.png");
 
     const embed = {
       color: 0x0099ff,
@@ -78,9 +77,6 @@ module.exports = {
         },
       ],
       timestamp: new Date().toISOString(),
-      thumbnail: {
-        url: "attachment://image.png",
-      },
     };
 
     return interaction.reply({

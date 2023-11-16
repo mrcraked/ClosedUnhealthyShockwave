@@ -93,7 +93,7 @@ client.on(Events.InteractionCreate, async (interaction) => {
 
   try {
     await command.execute(interaction, client);
-    console.log(`${client.user.username} ran ${interaction.commandName}.`);
+    console.log(`${interaction.user.username} ran ${interaction.commandName}.`);
   } catch (error) {
     console.error(error);
     if (interaction.replied || interaction.deferred) {
