@@ -1,64 +1,91 @@
-const { SlashCommandBuilder } = require('discord.js');
-const fetch = (...args) => import('node-fetch').then(({default: fetch}) => fetch(...args));
+const { SlashCommandBuilder, AttachmentBuilder } = require("discord.js");
+const fetch = (...args) =>
+  import("node-fetch").then(({ default: fetch }) => fetch(...args));
 
 module.exports = {
   data: new SlashCommandBuilder()
-    .setName('mc_server_info')
-    .setDescription('Get info of the Minecraft server')
-    .addStringOption(option =>
-      option
-        .setName('ip')
-        .setDescription(' the ip of the minecraft server')),
+    .setName("mc_server_info")
+    .setDescription("Get info of the Minecraft server")
+    .addStringOption((option) =>
+      option.setName("ip").setDescription(" the ip of the minecraft server")
+    ),
 
   async execute(interaction) {
-    const ip = interaction.options.getString('ip');
+    const ip = interaction.options.getString("ip");
 
     const response = await fetch(`https://api.mcsrvstat.us/3/${ip}`);
     const data = await response.json();
 
+    let players = "";
+    if (!data.online) {
+      players += "No players online";
+    } else {
+      players += data.players.online;
+    }
+
+    const buffer = Buffer.from(data.icon, "base64");
+
     const serverInfo = {
+      hostname: data.hostname,
       ip: data.ip,
       port: data.port,
       online: data.online,
-      version: data.version,
-      playersOnline: data.players.online,
-      software: data.software
-
+      version: data.version || "Null, Server Offline or not exist",
+      playersOnline: players,
+      software: data.software || "Null, Server Offline or not exist",
     };
-  
+
+    var status = "";
+    if (serverInfo.online == true) {
+      status = "online";
+    } else {
+      status = "offline";
+    }
+
+    const file = new AttachmentBuilder(buffer, "image.png");
+
     const embed = {
       color: 0x0099ff,
-      title:  `${ip} Minecraft Server Info`,
+      title: `${ip} Mc Server Info`,
       fields: [
         {
-          name: 'Numeric IP',
+          name: "Hostname",
+          value: serverInfo.hostname,
+        },
+        {
+          name: "Numeric IP",
           value: serverInfo.ip,
         },
         {
-          name: 'Port',
+          name: "Port",
           value: serverInfo.port,
         },
         {
-          name: 'Online',
-          value: serverInfo.online,
+          name: "Status",
+          value: status,
         },
         {
-          name: 'Server Version',
+          name: "Server Version",
           value: serverInfo.version,
         },
         {
-          name: 'Players Online',
+          name: "Players Online",
           value: serverInfo.playersOnline,
         },
         {
-          name: 'Software',
+          name: "Software",
           value: serverInfo.software,
         },
       ],
+      timestamp: new Date().toISOString(),
+      thumbnail: {
+        url: "attachment://image.png",
+      },
     };
+
     return interaction.reply({
-        embeds: [embed],
-        ephemeral: false,
+      embeds: [embed],
+      ephemeral: false,
     });
   },
 };

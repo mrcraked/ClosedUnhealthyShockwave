@@ -1,125 +1,125 @@
 {
-    "ip": "103.167.150.2",
-    "port": 2007,
-    "debug": {
-        "ping": true,
-        "query": false,
-        "srv": true,
-        "querymismatch": false,
-        "ipinsrv": false,
-        "cnameinsrv": false,
-        "animatedmotd": false,
-        "cachehit": false,
-        "cachetime": 1699954668,
-        "cacheexpire": 1699954728,
-        "apiversion": 3,
-        "dns": {
-            "srv": [
-                {
-                    "name": "_minecraft._tcp.vanilla.mc-srv.club",
-                    "type": "SRV",
-                    "class": "IN",
-                    "ttl": 300,
-                    "rdlength": 0,
-                    "rdata": "",
-                    "priority": 0,
-                    "weight": 1,
-                    "port": 2007,
-                    "target": "vanilla.mc-srv.club"
-                }
-            ],
-            "srv_a": [
-                {
-                    "name": "vanilla.mc-srv.club",
-                    "type": "A",
-                    "class": "IN",
-                    "ttl": 300,
-                    "rdlength": 0,
-                    "rdata": "",
-                    "address": "103.167.150.2"
-                }
-            ]
-        },
-        "error": {
-            "query": "Failed to read from socket."
+  "ip": "103.167.150.2",
+  "port": 2007,
+  "debug": {
+    "ping": true,
+    "query": false,
+    "srv": true,
+    "querymismatch": false,
+    "ipinsrv": false,
+    "cnameinsrv": false,
+    "animatedmotd": false,
+    "cachehit": false,
+    "cachetime": 1699954668,
+    "cacheexpire": 1699954728,
+    "apiversion": 3,
+    "dns": {
+      "srv": [
+        {
+          "name": "_minecraft._tcp.vanilla.mc-srv.club",
+          "type": "SRV",
+          "class": "IN",
+          "ttl": 300,
+          "rdlength": 0,
+          "rdata": "",
+          "priority": 0,
+          "weight": 1,
+          "port": 2007,
+          "target": "vanilla.mc-srv.club"
         }
+      ],
+      "srv_a": [
+        {
+          "name": "vanilla.mc-srv.club",
+          "type": "A",
+          "class": "IN",
+          "ttl": 300,
+          "rdlength": 0,
+          "rdata": "",
+          "address": "103.167.150.2"
+        }
+      ]
     },
-    "motd": {
-        "raw": [
-            "§r§aVANILLA-§r§eMC §r§d| §r§6Server Tanpa Pay-To-Win§r",
-            "§r§bServer kasual dengan admin yang santuy§r"
-        ],
-        "clean": [
-            "VANILLA-MC | Server Tanpa Pay-To-Win",
-            "Server kasual dengan admin yang santuy"
-        ],
-        "html": [
-            "<span style=\"color: #55FF55\">VANILLA-</span><span style=\"color: #FFFF55\">MC </span><span style=\"color: #FF55FF\">| </span><span style=\"color: #FFAA00\">Server Tanpa Pay-To-Win</span>",
-            "<span style=\"color: #55FFFF\">Server kasual dengan admin yang santuy</span>"
-        ]
-    },
-    "players": {
-        "online": 17,
-        "max": 80,
-        "list": [
-            {
-                "name": "AsaaC4",
-                "uuid": "976e7478-4575-363a-9c9f-f352ae959b82"
-            },
-            {
-                "name": "barajunio",
-                "uuid": "d50f20ab-786d-3e9a-9185-caf5a497b945"
-            },
-            {
-                "name": "cellykhaloli",
-                "uuid": "2539b066-2adc-38eb-b047-f8ec7584735f"
-            },
-            {
-                "name": "Drywae",
-                "uuid": "88dc44d9-38fb-39c9-b6a0-cbf0eda38e53"
-            },
-            {
-                "name": "GamingBo901",
-                "uuid": "961356eb-5151-3246-9582-0fe79fd60d6d"
-            },
-            {
-                "name": "Gaza",
-                "uuid": "dadc05a5-a85e-3d83-b587-41d2e9b9a38e"
-            },
-            {
-                "name": "Hxpz",
-                "uuid": "974b37b4-7dd2-310c-ab87-714e09a9fdb9"
-            },
-            {
-                "name": "Kavin",
-                "uuid": "299d1370-c827-3b17-8963-aca0d583dada"
-            },
-            {
-                "name": "keira_demon",
-                "uuid": "57e084a4-f26c-3b66-b4cf-6635fcda52e3"
-            },
-            {
-                "name": "logitech139",
-                "uuid": "f92c8024-0241-3f35-bbca-8dffa51d4ed9"
-            },
-            {
-                "name": "opec",
-                "uuid": "b19f39a8-c79d-34de-b8b1-030a4a830712"
-            },
-            {
-                "name": "roahm",
-                "uuid": "aba4ce48-1649-379b-b5eb-ed9ad9ed775d"
-            }
-        ]
-    },
-    "version": "1.20.2",
-    "online": true,
-    "protocol": {
-        "version": 764,
-        "name": "1.20.2"
-    },
-    "hostname": "vanilla.mc-srv.club",
-    "icon": "data:image/png;base64,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",
-    "software": "Paper",
-    "eula_blocked": false
+    "error": {
+      "query": "Failed to read from socket."
+    }
+  },
+  "motd": {
+    "raw": [
+      "§r§aVANILLA-§r§eMC §r§d| §r§6Server Tanpa Pay-To-Win§r",
+      "§r§bServer kasual dengan admin yang santuy§r"
+    ],
+    "clean": [
+      "VANILLA-MC | Server Tanpa Pay-To-Win",
+      "Server kasual dengan admin yang santuy"
+    ],
+    "html": [
+      "<span style=\"color: #55FF55\">VANILLA-</span><span style=\"color: #FFFF55\">MC </span><span style=\"color: #FF55FF\">| </span><span style=\"color: #FFAA00\">Server Tanpa Pay-To-Win</span>",
+      "<span style=\"color: #55FFFF\">Server kasual dengan admin yang santuy</span>"
+    ]
+  },
+  "players": {
+    "online": 17,
+    "max": 80,
+    "list": [
+      {
+        "name": "AsaaC4",
+        "uuid": "976e7478-4575-363a-9c9f-f352ae959b82"
+      },
+      {
+        "name": "barajunio",
+        "uuid": "d50f20ab-786d-3e9a-9185-caf5a497b945"
+      },
+      {
+        "name": "cellykhaloli",
+        "uuid": "2539b066-2adc-38eb-b047-f8ec7584735f"
+      },
+      {
+        "name": "Drywae",
+        "uuid": "88dc44d9-38fb-39c9-b6a0-cbf0eda38e53"
+      },
+      {
+        "name": "GamingBo901",
+        "uuid": "961356eb-5151-3246-9582-0fe79fd60d6d"
+      },
+      {
+        "name": "Gaza",
+        "uuid": "dadc05a5-a85e-3d83-b587-41d2e9b9a38e"
+      },
+      {
+        "name": "Hxpz",
+        "uuid": "974b37b4-7dd2-310c-ab87-714e09a9fdb9"
+      },
+      {
+        "name": "Kavin",
+        "uuid": "299d1370-c827-3b17-8963-aca0d583dada"
+      },
+      {
+        "name": "keira_demon",
+        "uuid": "57e084a4-f26c-3b66-b4cf-6635fcda52e3"
+      },
+      {
+        "name": "logitech139",
+        "uuid": "f92c8024-0241-3f35-bbca-8dffa51d4ed9"
+      },
+      {
+        "name": "opec",
+        "uuid": "b19f39a8-c79d-34de-b8b1-030a4a830712"
+      },
+      {
+        "name": "roahm",
+        "uuid": "aba4ce48-1649-379b-b5eb-ed9ad9ed775d"
+      }
+    ]
+  },
+  "version": "1.20.2",
+  "online": true,
+  "protocol": {
+    "version": 764,
+    "name": "1.20.2"
+  },
+  "hostname": "vanilla.mc-srv.club",
+  "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAI0UlEQVR4Xu2afWxW1R3HW9dCqhRXF2hGMhjBvWREIqkGs80/0E3IRma2bDPZ/tDMNY11yUhmAwUpTHkZrVXxhdXE+pJUbFAZjFUsClIskjoMNaIiDYJUi9iOVttSn3vvc4/f33k49zkv9z7PvfdZ6tN1n29OAvecc5/7+97zflvAJjkF+oXJhmGAC+2Gnoa+gP7XMQx4ACq4qD9CcXkFuha6GToH5SuGAbdCwoAyiFpEHL4PifushvIVw4B6SDw46X0oDl+HxD2qoHzFMKADkg2gsSAOl0HiHn+C8hXDgFGoCBIPXw1FJQkVQuIetVC+YhhAXA2Jh78GisrnULoNFbD1UL7iawD1WfHwxdAFKAonIdmArVC+4mvAE5AcwCEoCgchuf5OKF/xNeAYJAdwPxSFVkiu/waUr/gaQIPYdEgEcAsUhXsh2YAJtRAS3AiJAL4NReH3kKh7BZTPBBqwCpLf4idQWORZ5IdQGM5LGoBoIM2mj6BcCTRgFyQbQP8PA80YNHOIendAQVjQz6BLIPm3ougGyIHiEmgA9Vv5h6hFhIFmDLkezShB7IfUcOKJBu24BBpAUN8XP0JjQhgaIPnh3oaCOA1NhfSAouib0AgUl4wG0OgvfqgUotkhGzdBos43oGx1aIrcAP1NUiP0WAjRPqUPyoWMBtD8L7v9DpSJMagEEuWjTp9fBRkNiNKfCTpJkss/DuU7GQ2gNzoFEgFl29ffBomyNLJ/DOU7GQ0gKiARFM3vQdCURoseUfZH0EQgqwF0HiCConMC2ur6sQMS5Uh0tjgRyGpACyQHthfy4+eQbNREaP5EVgNOQbIBayGdM9DXIFHmF9BEIasBxLcgEdxPIJ0aSDbpn9BEIZQB8oKIDjsTkIDGhMshkT8XymVtPt6EMuDvkPyGD0CCzZCctwXKBffsW8zeUcncUwf1rMi4Q2dYsudllnwXGzl7TM/mhDKgB5KDvBsiaMMkv336kDIMxcUdPscS62ewRG0BS9xzBbaW/9GLBDM2xJLdzzB7VzWzHqlgibXTUve5mOyWX+k1OKEMIOSN0XUQcTskG0Pr+Fywn7tNeWjn9Yf1IiaJEea8WMMSdSVKXSOtm67X5IQ2gL4TikBpxKeDTvns/0ool4+p7rl3WGJVofrWHr9BL6bgfvwms+77jhmsT3La/qJX54Q2QD/o1LexuY789j+qjIemt8psf1Mp+MRfLzfrrC7iXcB+/g/M6djM+797/pRe3SO0AZ9Bl0Jy0EK/gXIC/VfvsyK5vV16aT5WWBtmKuWsDeWpLvOF/0o1iNAGEPJhJ4m6AO35w54XusOfsOS/m5n76XvKdef1h4zARUoee0EpS9itv1ODb8K+Y+RTvVgoIhnQBukGbIdCgRHd2jQr9dBrpjK3rzt13XWZ9cAP0gGhCSsGdDUpt3H731eDb/wub0FxiWQA7fjKIWFAJRSW5NEW5cGdl1akrvfsVa7bz/xaLYfWIeO016oG9fjvTcISyQCC9gYPQv+CovzxhPPiXWqgLb/k1+0nbkpfxyxACyDFgNfuU+5jbb3Oy6MZgFpQLkQ2IC5280+VwKwtV/FVnzz12U8vQ3MeVA04sCl9EwQrj/z2C7en82IybgZYm+cogSXWXsanKvma+8GB1IwgG/DqBu8e7ud9ap7WOuIwPgZgLk+sukQ1gJI04FmPXpsqq7eAVzd6t3EHP1Ty9AEyDuNigHv+AzN4LSWPXDxwvXA+2IChXrXO4Ue9vLiMjwEfHjICVtLdxempDNOlYoA8BiSG1byX16TzYjIuBiTfft4MWiR0DbtZOmQZ6Q82AMgrQFoQ5cq4GOAcfkQN+p4yNchO6QAVKzrVAHWHaT12vZfHp8Ec8TVgbGyM7du3jw0MDOhZbHR0lG3bto0dOxb+g6RzsEEN6rXGdBAN8/jA55HFAOellUo+La9zwTBgcHCQLViwgBUUFLCZM2eys2fPenkjIyOsoqKC502ZMoUdOXJEqhkM7crkh6aBzj1zGOv8HebmRe8CqCuTfG+3ku8NnjExDKitreUBirR48WJ29OhRntfY2KjkzZ8/n7W1tWl3MKF+rBiQae2uG3CwXs23RvkaQuTbTy5V8yNiGLBs2TIlSEpz5szheVVVVUZeSUkJ7xaZiGTA6EBmA4C97bfpMlhLxN0JEoYBGzduNIKcNWsWz9u+fbuRN23aND5mZIL6sWqA1Od1Qhigzyo0yMbFMMCyLLZkyRIvQOrrO3em/85v+fLlrLCw0MujATEbkQzQu4Dfcte6wBLrSr0yfCBNxjuKNwwgXGw6Ojs7WWtrKzt9+rSezU6ePMna29uVATITfoNgIPosgBnDD2fXnUq55FvP6kVC4WvAfxtqxqoBwcfd/GhcNkBeI0jQqZK8v7AeujrW1lgxgPpyIpH+6hOWvr4+tnTpUjZ37lyluwioGSsGoJkHoo8B2jQoYz97i1I2+eZTepE0+E23/zi6iq1c9gzYs2cPH9DKyspYQ0NDKCMcx2EtLS1sxowZ3phB/9Yxu0BwC+B7/jVT0wbs/rNewsM99656hLZuOvYHdczZfy8/BqfTJevhhfy6KEMnxrIJngE038uj++zZs7kRJ06c4GMCQS2ku7ubNTc3s8rKSlZeXm7MCgsXLvRuLnD2r1cN0Bc/Glbj99IPvDX1ESYIfWUYJnnnkUwyoKamxghGnglKS0uN63qaN28eO378uHdzgfPKWuUBgr7TCZQBDv2cxoVAcC86FdaDDEp0MEOziMAzgJpzfX097wZ6YNlSUVERXyQNDfkvcPSDTOZm/tM55aCUzgkHevQiKlgd0jdB77vixXp0Ck0tiBZOzt7VqZlCW4QZs0B/fz9buXKl0q/9UnFxMVu0aBFfHvf29uq3UXA670+/gU2pRVU26NTY2rKAOYce1LMyQ90rSxeTMQwQ2LbNOjo6eIArVqxg1dXVrK6ujjU1NbGurq6sqz+FxDCzn7sVW9kfs+SJdj33KyXQgMnC/w3QL0w2Jr0BXwLGi6Foh9tGowAAAABJRU5ErkJggg==",
+  "software": "Paper",
+  "eula_blocked": false
 }
