@@ -21,8 +21,8 @@ const client = new Client({
   partials: [Partials.Channel, Partials.Message, Partials.User, Partials.GuildMember, Partials.Reaction]
 });
 
-client.commands = new Collection();
 
+client.commands = new Collection();
 
 const commands = [];
 // Grab all the command files from the commands directory you created earlier
