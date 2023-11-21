@@ -35,6 +35,21 @@ const client = new Client({
 
 client.commands = new Collection();
 
+const eventsPath = path.join(__dirname, "events");
+const eventFiles = fs
+  .readdirSync(eventsPath)
+  .filter((file) => file.endsWith(".js"));
+
+for (const file of eventFiles) {
+  const filePath = path.join(eventsPath, file);
+  const event = require(filePath);
+  if (event.once) {
+    client.once(event.name, (...args) => event.execute(...args));
+  } else {
+    client.on(event.name, (...args) => event.execute(...args));
+  }
+}
+
 const commands = [];
 // Grab all the command files from the commands directory you created earlier
 const foldersPath = path.join(__dirname, "commands");
@@ -93,7 +108,7 @@ client.on(Events.InteractionCreate, async (interaction) => {
 
   try {
     await command.execute(interaction, client);
-    console.log(`${interaction.user.username} ran ${interaction.commandName}.`);
+    console.log(`${interaction.user.username} ran a command : ${interaction.commandName}. in ${interaction.guildId}`);
   } catch (error) {
     console.error(error);
     if (interaction.replied || interaction.deferred) {
@@ -115,3 +130,15 @@ client.once(Events.ClientReady, (c) => {
 });
 
 client.login(token);
+
+const express = require("express");
+const app = express();
+const port = 3000;
+
+app.get("/", (req, res) => {
+  res.send("Hello World!");
+});
+
+app.listen(port, () => {
+  console.log(`Example app listening on port ${port}`);
+});

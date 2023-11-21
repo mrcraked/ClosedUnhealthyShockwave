@@ -1,17 +1,17 @@
-const { SlashCommandBuilder, AttachmentBuilder } = require("discord.js");
+const { SlashCommandBuilder } = require("discord.js");
 const fetch = (...args) =>
   import("node-fetch").then(({ default: fetch }) => fetch(...args));
-const path = require("node:path");
-const fs = require("node:fs");
 
 module.exports = {
   data: new SlashCommandBuilder()
     .setName("mc_server_info")
-    .setDescription("Get info of the Minecraft server")
+    .setDescription("Retrieve information about a Minecraft server.")
     .addStringOption((option) =>
-      option.setName("ip").setDescription(" the ip of the minecraft server")
+      option
+        .setName("ip")
+        .setDescription("The IP address of the Minecraft server.")
+        .setRequired(true)
     ),
-
   async execute(interaction) {
     const ip = interaction.options.getString("ip");
 
@@ -25,7 +25,6 @@ module.exports = {
       players += data.players.online;
     }
 
-   
     const serverInfo = {
       hostname: data.hostname,
       ip: data.ip,
@@ -45,7 +44,7 @@ module.exports = {
 
     const embed = {
       color: 0x0099ff,
-      title: `${ip} Mc Server Info`,
+      title: `${ip} Info`,
       fields: [
         {
           name: "Hostname",
@@ -77,6 +76,12 @@ module.exports = {
         },
       ],
       timestamp: new Date().toISOString(),
+      footer: {
+        text: "MC Server Info",
+      },
+      thumbnail: {
+        url: `https://api.mcsrvstat.us/icon/${ip}`,
+      },
     };
 
     return interaction.reply({
